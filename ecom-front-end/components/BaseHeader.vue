@@ -6,6 +6,16 @@
 						<a href="#" class="uk-logo" title="eCommerce"><img src="logo.png" alt="Logo"></a>
 					</div>
 				    <div class="uk-width-auto">
+					 <ul v-if="$store.state.authenticated">
+       <li><NuxtLink to="/">Home</NuxtLink></li>
+       <li><NuxtLink to="/profile">Profile</NuxtLink></li>
+       <li><a class="logout" @click="userLogout">Logout</a></li>
+     </ul>
+     <ul v-else>
+       <li>
+         <a class="logout">Magic Nuxt Demo</a>
+       </li>
+     </ul>
 					    <ul class="uk-subnav" data-uk-margin>
 						  <li class="uk-visible@s"><NuxtLink to="/">Home</NuxtLink></li>
 						  	  <li class="uk-visible@s"><NuxtLink to="/">About</NuxtLink></li>
@@ -29,7 +39,7 @@
 <ul class="uk-nav-default uk-nav-parent-icon" data-uk-nav>
 									
 										
-										<li><img src="purse.jpg" width="60" /><span class="uk-margin-small-left"></span>Mens Purse £240<span class="uk-margin-small-left" data-uk-icon="icon: trash"></span><span class="uk-margin-small-left" data-uk-icon="icon: pencil"></span></li>
+									<li><img src="purse.jpg" width="60" /><span class="uk-margin-small-left"></span>Mens Purse £240<span class="uk-margin-small-left" data-uk-icon="icon: trash"></span><span class="uk-margin-small-left" data-uk-icon="icon: pencil"></span></li>
 									</ul>
                                     <hr>
 									<a href="#" class="uk-button uk-button-secondary uk-width-1-1">CHECKOUT</a>
@@ -53,25 +63,26 @@
 								</div>
 							</li>
 						
-									<li class="uk-visible@s">
+								<li class="uk-visible@s">
 								<a href="#" data-uk-icon="icon:user"></a>
 								<div class="drop-nav uk-dropdown" data-uk-dropdown="mode: click; offset: 20;animation: uk-animation-slide-bottom-small; duration: 150">
 									<h4 class="uk-margin-small-bottom uk-margin-remove-adjacent">Account</h4>
 								    <hr>
-<ul v-if="$store.state.authenticated" class="uk-list uk-list-space">
+                                <ul class="uk-list uk-list-space">
                                      <li><span class="uk-margin-small-right" data-uk-icon="icon: home"></span><NuxtLink to="/">Home</NuxtLink></li>
 									 <li><span class="uk-margin-small-right" data-uk-icon="icon: user"></span><NuxtLink to="/profile">User Profile</NuxtLink></li>
 									  <li><span class="uk-margin-small-right" data-uk-icon="icon: cog"></span>Account</li>
-									   <li><span class="uk-margin-small-right" data-uk-icon="icon: mail"></span>Messsages</li>
+									   <li><span class="uk-margin-small-right" data-uk-icon="icon: mail"></span>Messages</li>
 									    <li><span class="uk-margin-small-right" data-uk-icon="icon: sign-out"></span><a class="logout" @click="userLogout">Logout</a></li>
+									
 									</ul>
                                
 									<hr>
 									
 								</div>
 							</li>
-						<li class="uk-hidden@s"><a data-uk-navbar-toggle-icon data-uk-toggle href="#offcanvas-nav"></a></li>
-						</ul>
+							<li class="uk-hidden@s"><a data-uk-navbar-toggle-icon data-uk-toggle href="#offcanvas-nav"></a></li>
+					       </ul>
 					</div>
 				</div>
 			</div>

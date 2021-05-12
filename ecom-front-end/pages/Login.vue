@@ -1,22 +1,29 @@
 <template>
        <div class="uk-width-medium uk-padding-small">
 			<!-- login -->
-			<form class="toggle-class" action="login-dark.html">
+			<form @submit.prevent="userLogin" class="toggle-class">
 				<fieldset class="uk-fieldset">
 					<div class="uk-margin-small">
 						<div class="uk-inline uk-width-1-1">
 							<span class="uk-form-icon uk-form-icon-flip" data-uk-icon="icon: user"></span>
-							<input class="uk-input uk-border-pill" required placeholder="Username" type="text">
+							<input 
+							v-model="name"
+							class="uk-input uk-border-pill" 
+							required 
+							placeholder="Username" 
+							type="text" />
 						</div>
 					</div>
 					<div class="uk-margin-small">
 						<div class="uk-inline uk-width-1-1">
-							<span class="uk-form-icon uk-form-icon-flip" data-uk-icon="icon: lock"></span>
-							<input class="uk-input uk-border-pill" required placeholder="Password" type="password">
+							<span class="uk-form-icon uk-form-icon-flip" data-uk-icon="icon: user"></span>
+							<input 
+							v-model="email"
+							class="uk-input uk-border-pill" 
+							required 
+							placeholder="Enter your email"
+							type="email" />
 						</div>
-					</div>
-					<div class="uk-margin-small">
-						<label><input class="uk-checkbox" type="checkbox"> Keep me logged in</label>
 					</div>
 					<div class="uk-margin-bottom">
 						<button type="submit" class="uk-button uk-button-primary uk-border-pill uk-width-1-1">LOG IN</button>
@@ -34,7 +41,7 @@
 					</div>
 				</div>
 				<div class="uk-margin-bottom">
-					<button type="submit" class="uk-button uk-button-primary uk-border-rounded uk-width-1-1">SEND PASSWORD</button>
+					<button type="submit" class="uk-button uk-button-primary uk-border-rounded uk-width-1-1">Send Magic Link</button>
 				</div>
 			</form>
 			<!-- /recover password -->
