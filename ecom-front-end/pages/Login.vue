@@ -57,3 +57,35 @@
 		</div>
 
 </template>
+
+<script>
+export default {
+ data() {
+   return {
+     email: '',
+	 name: ''
+   }
+ },
+ mounted() {
+   // If the user is authenticated, redirect to profile page.
+   if (this.$store.state.authenticated) {
+     this.$router.push('/profile')
+   }
+ },
+ methods: {
+   async userLogin() {
+     this.$store
+       .dispatch('login', {
+         email: this.email,
+		 name: this.name
+       })
+       .then(() => {
+         this.$router.push('/profile')
+       })
+       .catch((err) => {
+         console.log(err)
+       })
+   },
+ },
+}
+</script>
