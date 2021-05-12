@@ -6,17 +6,7 @@
 						<a href="#" class="uk-logo" title="eCommerce"><img src="logo.png" alt="Logo"></a>
 					</div>
 				    <div class="uk-width-auto">
-					 <ul v-if="$store.state.authenticated">
-       <li><NuxtLink to="/">Home</NuxtLink></li>
-       <li><NuxtLink to="/profile">Profile</NuxtLink></li>
-       <li><a class="logout" @click="userLogout">Logout</a></li>
-     </ul>
-     <ul v-else>
-       <li>
-         <a class="logout">Magic Nuxt Demo</a>
-       </li>
-     </ul>
-					    <ul class="uk-subnav" data-uk-margin>
+					 <ul class="uk-subnav" data-uk-margin>
 						  <li class="uk-visible@s"><NuxtLink to="/">Home</NuxtLink></li>
 						  	  <li class="uk-visible@s"><NuxtLink to="/">About</NuxtLink></li>
 							<li class="uk-visible@s"><NuxtLink to="/contact">Collections</NuxtLink></li>
