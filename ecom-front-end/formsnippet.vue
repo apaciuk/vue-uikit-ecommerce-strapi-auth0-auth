@@ -7,3 +7,19 @@
 					<div class="uk-margin-small">
 						<label><input class="uk-checkbox" type="checkbox"> Keep me logged in</label>
 					</div>
+
+
+
+
+
+
+					 <ul v-if="$store.state.authenticated">
+       <li><NuxtLink to="/">Home</NuxtLink></li>
+       <li><NuxtLink to="/profile">Profile</NuxtLink></li>
+       <li><a class="logout" @click="userLogout">Logout</a></li>
+     </ul>
+     <ul v-else>
+       <li>
+         <a class="logout">Magic Nuxt Demo</a>
+       </li>
+     </ul>
