@@ -58,11 +58,12 @@
 								<div class="drop-nav uk-dropdown" data-uk-dropdown="mode: click; offset: 20;animation: uk-animation-slide-bottom-small; duration: 150">
 									<h4 class="uk-margin-small-bottom uk-margin-remove-adjacent">Account</h4>
 								    <hr>
-<ul class="uk-list uk-list-space">
-									 <li><span class="uk-margin-small-right" data-uk-icon="icon: user"></span>User Profile</li>
+<ul v-if="$store.state.authenticated" class="uk-list uk-list-space">
+                                     <li><span class="uk-margin-small-right" data-uk-icon="icon: home"></span><NuxtLink to="/">Home</NuxtLink></li>
+									 <li><span class="uk-margin-small-right" data-uk-icon="icon: user"></span><NuxtLink to="/profile">User Profile</NuxtLink></li>
 									  <li><span class="uk-margin-small-right" data-uk-icon="icon: cog"></span>Account</li>
 									   <li><span class="uk-margin-small-right" data-uk-icon="icon: mail"></span>Messsages</li>
-									    <li><span class="uk-margin-small-right" data-uk-icon="icon: sign-out"></span>Logout</li>
+									    <li><span class="uk-margin-small-right" data-uk-icon="icon: sign-out"></span><a class="logout" @click="userLogout">Logout</a></li>
 									</ul>
                                
 									<hr>
@@ -79,6 +80,11 @@
 </template>
 <script>
 export default {
+ methods: {
+   async userLogout() {
+     this.$store.dispatch('logout')
+   },
+ },
 }
 </script>
 <style scoped>
