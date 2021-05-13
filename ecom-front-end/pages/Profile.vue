@@ -29,10 +29,16 @@ img {
 }
 </style>
 <script>
-export default {}
+export default {
+  middleware: 'auth',
+  computed: {
+    user() {
+      return this.$auth.user
+    }
+  }
+}
 </script>
-
- <style scoped>
+<style scoped>
 .label {
  font-size: 12px;
  color: #6851ff;
