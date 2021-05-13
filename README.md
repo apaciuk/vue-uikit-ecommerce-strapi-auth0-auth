@@ -1,4 +1,4 @@
-# vue-uikit-ecommerce-strapi-magic-auth
+# vue-uikit-ecommerce-strapi-auth0-auth
 
 ## Build Setup
 
