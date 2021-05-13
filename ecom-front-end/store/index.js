@@ -1,4 +1,4 @@
-import { magic } from '../plugins/magic'
+import { auth0 } from '../plugins/auth0'
 
 export const state = () => ({
     user: null,

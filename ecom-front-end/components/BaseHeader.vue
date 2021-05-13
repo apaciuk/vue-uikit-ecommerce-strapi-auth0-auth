@@ -76,16 +76,17 @@
 					</div>
 				</div>
 			</div>
+                       <fork-this/>
 		</header>
      <!--/HEADER-->
 </template>
 <script>
+import ForkThis from '~/components/ForkThis'
 export default {
- methods: {
-   async userLogout() {
-     this.$store.dispatch('logout')
-   },
+  components: {
+    ForkThis
  },
+ methods: {}
 }
 </script>
 <style scoped>
