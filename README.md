@@ -1,4 +1,4 @@
-# vue-uikit-ecommerce-strapi-magic-auth
+# vue-uikit-ecommerce-strapi-auth0-auth
 
 ## Build Setup
 
@@ -20,3 +20,21 @@ $ yarn generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+
+Back End
+
+```bash
+# install dependencies
+$ yarn
+
+# develop/serve at localhost:1337
+$ yarn develop
+
+# build for production and/or launch server
+$ yarn build
+$ yarn start
+
+
+```
+

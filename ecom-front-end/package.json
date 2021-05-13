@@ -1,5 +1,5 @@
 {
-  "name": "vue-uikit-ecommerce-strapi-magic-auth",
+  "name": "vue-uikit-ecommerce-strapi-auth0-auth",
   "version": "1.0.0",
   "private": true,
   "scripts": {
