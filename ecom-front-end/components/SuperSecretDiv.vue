@@ -1,5 +1,5 @@
 <template>
-  <div>This is a super secret div.</div>
+  <div>This is the login page.</div>
 </template>
 
 <style scoped>

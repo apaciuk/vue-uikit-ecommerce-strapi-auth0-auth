@@ -3,14 +3,7 @@
     <img :src="user.picture"/>
     <p>Hi {{ user.email }}!</p>
     <p>This is a super secure profile page! Try loading this page again using the incognito/private mode of your browser.</p>
-    <div class="label">Email</div>
-   <div class="profile-info">{{ $store.state.user.email }}</div>
-
-   <div class="label">Issuer</div>
-   <div class="profile-info">{{ $store.state.user.issuer }}</div>
-
-   <div class="label">Public Address</div>
-   <div class="profile-info">{{ $store.state.user.publicAddress }}</div>
+  
  </div>
 </template>
 <script>

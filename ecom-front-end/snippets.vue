@@ -43,3 +43,54 @@
 									
 								</div>
 							</li>
+
+
+							  <div class="label">Email</div>
+   <div class="profile-info">{{ $store.state.user.email }}</div>
+
+   <div class="label">Issuer</div>
+   <div class="profile-info">{{ $store.state.user.issuer }}</div>
+
+   <div class="label">Public Address</div>
+   <div class="profile-info">{{ $store.state.user.publicAddress }}</div>
+
+   // Middleware functions
+
+   export default function ({ store, redirect }) {
+    // If the user is not authenticated, redirect to login page.
+    if (!store.state.authenticated) {
+      return redirect('/login');
+    }
+}
+
+// S6tore mutations
+
+import { auth0 } from '../plugins/auth0'
+
+export const state = () => ({
+    user: null,
+    authenticated: false
+})
+
+export const mutations = {
+SET_USER_DATA(state, userData) {
+    state.user = userData;
+    state.authenticated = true;
+},
+CLEAR_USER_DATA(state) {
+    state.user = null;
+    state.authenticated = false;
+    this.$router.push('/login');
+}
+}
+export const actions = {
+    async login({ commit }, email) {
+      await magic.auth.loginWithMagicLink(email);
+      const metadata = await magic.user.getMetadata();
+      commit('SET_USER_DATA', metadata);
+    },
+    async logout({ commit }) {
+      await magic.user.logout();
+      commit('CLEAR_USER_DATA');
+    },
+};
