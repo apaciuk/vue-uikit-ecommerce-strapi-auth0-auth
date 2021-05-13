@@ -37,25 +37,30 @@ export default {
   buildModules: [
   ],
 
-  // Modules: https://go.nuxtjs.dev/config-modules
+   /*
+  ** Modules
+  */
   modules: [
-    // https://go.nuxtjs.dev/axios
+    // axios is required by @nuxtjs/auth
     '@nuxtjs/axios',
-    // https://go.nuxtjs.dev/pwa
-    '@nuxtjs/pwa',
+    // https://auth.nuxtjs.org
+    '@nuxtjs/auth'
   ],
-
-  // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
-
-  // PWA module configuration: https://go.nuxtjs.dev/pwa
-  pwa: {
-    manifest: {
-      lang: 'en'
+  auth: {
+    redirect: {
+      login: '/', // redirect user when not connected
+      callback: '/auth/signed-in'
+    },
+    strategies: {
+      local: false,
+      auth0: {
+        domain: process.env.AUTH0_DOMAIN,
+        client_id: process.env.AUTH0_CLIENT_ID
+      }
     }
   },
-
-  // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  }
+    // For stormkit.io
+    publicPath: process.env.PUBLIC_PATH,
+}
 }
